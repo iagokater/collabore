@@ -1,0 +1,129 @@
+ion-header {
+    box-shadow: none;
+}
+
+ion-toolbar {
+    --background: #FFF;
+    padding-left: 12px;
+
+    ion-button {
+        --color: #E8ECF4;
+        --border-radius: 12px;
+    }
+}
+
+ion-content {
+    --background: #FFF;
+
+    h1 {
+        color: var(--ColorOne);
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    form {
+
+        margin-top: 5rem;
+
+        ion-item {
+            --background: transparent;
+            --background: var(--ColorThree);
+            --border-radius: 8px;
+            --border-style: solid;
+            --border-width: 1px;
+            --border-color: #E8ECF4;
+
+            ion-input {
+                --border: none;
+                --padding-start: 8px;
+                --placeholder-color: #8391A1;
+                --color: var(--ColorOne);
+                --background: #F7F8F9;
+            }
+
+            ion-note {
+                align-self: center !important;
+            }
+        }
+
+        .a {
+            color: #6A707C;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: normal;
+            text-align: right;
+        }
+
+        ion-button {
+            height: 44px;
+            border: none !important;
+            --border-radius: 8px;
+            --border-color: var(--ColorOne);
+            --border-style: solid;
+            --border-width: 1px;
+            --background: var(--ColorOne);
+            outline: none;
+            text-transform: unset;
+        }
+
+        ion-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #6A707C;
+            cursor: pointer;
+        }
+    }
+
+    p {
+        font-size: 1rem;
+        color: #6A707C;
+        cursor: pointer;
+    }
+
+    .line-with-text {
+        margin-top: 2rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6A707C;
+      
+        &:before,
+        &:after {
+          content: "";
+          flex: 1;
+          border-bottom: 1px solid #000;
+          margin: 0 10px;
+        }
+    }
+
+    .btn-google {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+
+        .google-icon {
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+        }
+    }
+
+    .msg-box {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .msg {
+        font-size: 0.95rem !important;
+        font-weight: 500;
+        letter-spacing: 0.15px;
+        line-height: 140%;
+        text-align: center;
+        cursor: default;
+    }
+}

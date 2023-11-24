@@ -1,0 +1,140 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button fill="outline" (click)="goBack()">
+      <ion-icon name="chevron-back-outline" style="color: #1E232C;"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <h1>Olá, registre-se para começar!</h1>
+
+  <form class="form" [formGroup]="formGroup">
+
+    <ion-item class="ion-margin-top">
+      <ion-input type="text" placeholder="Nome" formControlName="name"></ion-input>
+      <ion-note class="ion-text-center" slot="end" color="danger" *ngIf="formGroup.get('name')?.dirty && formGroup.get('name')?.hasError('required')">Obrigatório</ion-note>
+    </ion-item>
+
+    <ion-item class="ion-margin-top">
+      <ion-input type="email" placeholder="E-mail" formControlName="email"></ion-input>
+      <ion-note class="ion-text-center" slot="end" color="danger" *ngIf="formGroup.get('email')?.dirty && formGroup.get('email')?.hasError('required')">Obrigatório</ion-note>
+      <ion-note class="ion-text-center" slot="end" color="danger" *ngIf="formGroup.get('email')?.dirty && formGroup.get('email')?.hasError('email')">E-mail inválido</ion-note>
+    </ion-item>
+
+    <ion-item class="ion-margin-top">
+      <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
+      <ion-note class="ion-text-center" slot="end" color="danger" *ngIf="formGroup.get('password')?.dirty && formGroup.get('password')?.hasError('required')">Obrigatório</ion-note>
+    </ion-item>
+
+    <ion-item class="ion-margin-top">
+      <ion-input type="password" placeholder="Confirme sua senha" formControlName="confirmPassword"></ion-input>
+      <ion-note class="ion-text-center" slot="end" color="danger" *ngIf="formGroup.get('confirmPassword')?.dirty && formGroup.get('confirmPassword')?.hasError('required')">Obrigatório</ion-note>
+      <ion-note class="ion-text-center" slot="end" color="danger" *ngIf="formGroup.get('confirmPassword')?.dirty && formGroup.get('confirmPassword')?.value !== formGroup.get('password')?.value && formGroup.get('password')?.value && formGroup.get('confirmPassword')?.value">As senhas devem ser iguais</ion-note>
+    </ion-item>
+
+    <ion-checkbox class="ion-margin-top" labelPlacement="end">Eu li e aceito os termos e condições</ion-checkbox>
+
+    <ion-button [disabled]="!formGroup.valid" (click)="createAccount()" type="submit" expand="block" class="ion-margin-top">Registre-se</ion-button>
+
+  </form>
+
+  <hr>
+
+  <!-- <ion-row class="ion-margin-top">
+    <ion-col text-center>
+      <div class="line-with-text">
+        <ion-label>Ou entre com</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div class="btn-google" (click)="authService.googleRegister()">
+    <ion-img
+      class="google-icon"
+      src="../../../assets/google_ic.svg"
+      alt="Ícone do Google"
+    ></ion-img>
+  </div> -->
+
+    <div class="msg-box">
+    <p 
+      class="msg" 
+      style="color: #1E232C">Já tem uma conta? 
+      <span
+        [routerLink]="['/login']" 
+        class="msg" 
+        style="color: #35C2C1; cursor: pointer;"
+        >Faça login</span>
+    </p>
+  </div>
+
+</ion-content>
+
+
+
+
+
+
+<!-- 
+<div class="container">
+  <button class="back" routerLink="/">
+    <i class="bx bx-chevron-left"></i>
+  </button>
+  <div class="welcome">
+    <h1>Olá! Cadastre-se para colaborar...</h1>
+  </div>
+  <div class="inputs">
+    <ion-input
+      type=""
+      fill="solid"
+      label="Nome"
+      labelPlacement="floating"
+      helperText="Digite seu nome"
+      ngModel
+      class="email"
+    ></ion-input>
+    <ion-input
+      type="email"
+      fill="solid"
+      label="E-mail"
+      labelPlacement="floating"
+      helperText="Digite um e-mail"
+      errorText="E-mail inválido"
+      ngModel
+      email
+      class="email"
+    ></ion-input>
+    <ion-input
+      type="password"
+      fill="solid"
+      label="Senha"
+      labelPlacement="floating"
+      helperText="Digite sua senha"
+      ngModel
+      class="senha"
+    ></ion-input>
+    <ion-input
+      type="password"
+      fill="solid"
+      label="Senha"
+      labelPlacement="floating"
+      helperText="Confirme sua senha"
+      ngModel
+      class="senha"
+    ></ion-input>
+  </div>
+  <div class="botao">
+    <ion-button class="cadastrar"> Cadastrar </ion-button>
+  </div>
+  <div class="option">
+    <p>Ou cadastre-se com</p>
+    <a href="https://www.google.com">
+      <img src="../../../assets/google_ic.svg" alt="Google" />
+    </a>
+  </div>
+  <p class="option2">
+    Já tem uma conta? <a href="/login" class="cadastrer">Login</a>
+  </p>
+</div> -->

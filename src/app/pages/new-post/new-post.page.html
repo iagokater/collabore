@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="visu-img">
+    <div class="superior">
+      <button class="back" [routerLink]="['/collabore/feed']">
+        <i class="bx bx-chevron-left"></i>
+      </button>
+    </div>
+    <div class="imgs-baixo">
+      <img
+        *ngIf="!imageUrl"
+        (click)="takePicture()"
+        src="../../assets/camera.svg"
+        alt="novo post"
+        class="adicionar"
+      />
+      <img
+        *ngIf="imageUrl"
+        (click)="takePicture()"
+        [src]="imageUrl"
+        alt="novo post"
+        class="adicionado"
+      />
+    </div>
+  </div>
+  <div class="inferior">
+    <p class="select">Selecione a categoria da publicação:</p>
+    <ion-segment class="escolhas" [(ngModel)]="selectedSegment" value="elogio">
+      <ion-segment-button class="elogio" value="elogio">
+        <ion-label>Elogio</ion-label>
+        <ion-icon name="trophy-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button class="alerta" value="alerta">
+        <ion-label>Alerta</ion-label>
+        <ion-icon name="warning-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button class="critica" value="critica">
+        <ion-label>Crítica</ion-label>
+        <ion-icon name="alert-circle-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+    <div *ngIf="selectedSegment === 'elogio'">
+      <div class="inputs">
+        <ion-input
+          type=""
+          maxlength="40"
+          required="true"
+          label="Titulo*"
+          labelPlacement="floating"
+          ngModel
+          class="title"
+          autocomplete="on"
+        ></ion-input>
+        <ion-textarea
+          required="true"
+          placeholder="Conte aqui o seu elogio..."
+          [autoGrow]="true"
+          class="description"
+        ></ion-textarea>
+      </div>
+    </div>
+    <div *ngIf="selectedSegment === 'alerta'">
+      <div class="inputs">
+        <ion-input
+          type=""
+          maxlength="40"
+          required="true"
+          label="Titulo*"
+          labelPlacement="floating"
+          ngModel
+          class="title"
+        ></ion-input>
+        <ion-textarea
+          required="true"
+          placeholder="Diga-nos qual o seu alerta..."
+          [autoGrow]="true"
+          class="description"
+        ></ion-textarea>
+      </div>
+    </div>
+    <div *ngIf="selectedSegment === 'critica'">
+      <div class="inputs">
+        <ion-input
+          type=""
+          maxlength="40"
+          required="true"
+          label="Titulo*"
+          labelPlacement="floating"
+          ngModel
+          class="title"
+        ></ion-input>
+        <ion-textarea
+          required="true"
+          placeholder="Faça aqui sua reclamação..."
+          [autoGrow]="true"
+          class="description"
+        ></ion-textarea>
+      </div>
+    </div>
+    <div class="localizacao">
+      <ion-button class="localizar" routerLink="/location">
+        Localização
+      </ion-button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="topo">
+    <img
+      src="{{ profile ? profile : '../../assets/ProfileAvatar.svg' }}"
+      alt="imagem de perfil"
+    />
+    <h1>{{userName}} <a (click)="openModal()"><i class="bx bx-pencil"></i></a></h1>
+  </div>
+  <div class="galery">
+    <h3>Suas colaboraçoes</h3>
+    <div class="imgs">
+      <div
+        *ngFor="let imagePath of imagePaths"
+        class="minis"
+      >
+        <img [src]="imagePath" alt="Miniatura da publicação" />
+      </div>
+    </div>
+  </div>
+</div>

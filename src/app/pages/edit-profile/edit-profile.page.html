@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="topo">
+    <div class="centro">
+      <button class="back" routerLink="/collabore/profile">
+        <i class="bx bx-chevron-left"></i>
+      </button>
+      <div class="centro-profile">
+        <img
+          src="{{ profile ? profile : '../../assets/ProfileAvatar.svg' }}"
+          alt="imagem de perfil"
+        />
+        <h1>
+          Editar Foto
+          <a (click)="openImageUploadModal()"><i class="bx bx-pencil"></i></a>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <form (ngSubmit)="save()" [formGroup]="userForm">
+    <div class="inputs">
+      <h3>Insira o nome de perfil desejado</h3>
+      <div class="edicoes">
+        <!-- <ion-item fill="outline"> -->
+        <ion-input
+          formControlName="name"
+          end
+          type="text"
+          placeholder="Nome"
+        ></ion-input>
+        <!-- </ion-item> -->
+      </div>
+    </div>
+    <div class="inferior">
+      <a routerLink="/password-edit">Alterar senha</a>
+      <ion-button type="submit" expand="block" class="ion-margin-top">
+        Confirmar alterações
+      </ion-button>
+    </div>
+  </form>
+</div>

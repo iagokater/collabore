@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.25rem;
+  height: 100%;
+  overflow-y: auto;
+
+  background-color: #ffff;
+
+  .topo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: transparent;
+
+    img {
+      height: 6.375rem;
+      width: 6.375rem;
+      border-radius: 16rem;
+    }
+
+    h1 {
+      font-size: 1rem;
+      font-weight: 650;
+      margin-right: 0.75rem;
+      color: #0c0f14;
+      margin: 0;
+
+      i {
+        font-size: 0.875;
+      }
+    }
+  }
+
+  .galery {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    h3 {
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 650;
+      color: #0c0f14;
+      width: 100%;
+    }
+  }
+
+  .imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0.25rem;
+
+    .minis {
+      margin: 0 0.25rem 0.25rem 0;
+      flex: 0 0 calc(33.33% - 4px); /* 3 imagens por linha, com 10px de espaço entre elas */
+      max-width: calc(33.33% - 4px);
+      min-width: 6.813rem;
+      max-height: calc(33.33% - 4px);
+      min-height: 8.125rem;
+
+      img {
+        height: 100%;
+        border-radius: 0.25rem;
+      }
+    }
+  }
+}

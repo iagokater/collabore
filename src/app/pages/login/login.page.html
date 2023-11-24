@@ -1,0 +1,67 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <ion-button fill="outline" [routerLink]="['/']">
+      <ion-icon name="chevron-back-outline" style="color: #1E232C;"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <h1 class="ion-text-start">Bem vindo de volta!</h1>
+
+  <form [formGroup]="formGroup" class="form" (ngSubmit)="submitLogin()">
+
+    <ion-item class="ion-margin-top">
+      <ion-input type="email" placeholder="Insira seu e-mail" formControlName="email"></ion-input>
+      <ion-note class="ion-text-center" slot="end" color="danger" *ngIf="formGroup.get('email')?.dirty && formGroup.get('email')?.hasError('required')">Obrigatório</ion-note>
+      <ion-note class="ion-text-center" slot="end" color="danger" *ngIf="formGroup.get('email')?.dirty && formGroup.get('email')?.hasError('email')">E-mail inválido</ion-note>
+    </ion-item>
+
+    <ion-item class="ion-margin-top">
+      <ion-input type="password" placeholder="Insira sua senha" formControlName="password"></ion-input>
+      <ion-note class="ion-text-center" slot="end" color="danger" *ngIf="formGroup.get('password')?.dirty && formGroup.get('password')?.hasError('required')">Obrigatório</ion-note>
+    </ion-item>
+
+    <ion-row class="ion-margin-top">
+      <ion-col>
+          <ion-label routerLink="/password-forget" class="ion-float-end">Esqueceu a senha?</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-button type="submit" expand="block" class="ion-margin-top">
+      Login
+    </ion-button>
+
+  </form>
+
+  <hr>
+
+  <ion-row class="ion-margin-top">
+    <ion-col text-center>
+      <div class="line-with-text">
+        <ion-label>Ou entre com</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div class="btn-google" (click)="authService.googleLogin()">
+    <ion-img
+      class="google-icon"
+      src="../../../assets/google_ic.svg"
+      alt="Ícone do Google"
+    ></ion-img>
+  </div>
+
+  <div class="msg-box">
+    <p 
+      class="msg" 
+      style="color: #1E232C">Não tem uma conta? 
+      <span
+        [routerLink]="['/register']" 
+        class="msg" 
+        style="color: #35C2C1; cursor: pointer;"
+        >Cadastre-se</span>
+    </p>
+  </div>
+</ion-content>
